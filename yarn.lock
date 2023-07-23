@@ -68,6 +68,62 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sentry-internal/tracing@npm:7.60.0":
+  version: 7.60.0
+  resolution: "@sentry-internal/tracing@npm:7.60.0"
+  dependencies:
+    "@sentry/core": 7.60.0
+    "@sentry/types": 7.60.0
+    "@sentry/utils": 7.60.0
+    tslib: ^2.4.1 || ^1.9.3
+  checksum: ebd60aea46ca4317303ddb6ee4d6d440fd1b6c936a7c30081944d6197406a13465c7211a1490f199f2b5c51c2de51e5e6471a082990891150fcbeedc28c6464e
+  languageName: node
+  linkType: hard
+
+"@sentry/core@npm:7.60.0":
+  version: 7.60.0
+  resolution: "@sentry/core@npm:7.60.0"
+  dependencies:
+    "@sentry/types": 7.60.0
+    "@sentry/utils": 7.60.0
+    tslib: ^2.4.1 || ^1.9.3
+  checksum: 33d5c69f9507a49ac22d36bfe772625b328cd75a4b5c9d64af8b2d8635b3e502e1e98e0eaab51458e4d8b55739daa1c34294aa4179eeb6fe4f285c03b08e6328
+  languageName: node
+  linkType: hard
+
+"@sentry/node@npm:^7.60.0":
+  version: 7.60.0
+  resolution: "@sentry/node@npm:7.60.0"
+  dependencies:
+    "@sentry-internal/tracing": 7.60.0
+    "@sentry/core": 7.60.0
+    "@sentry/types": 7.60.0
+    "@sentry/utils": 7.60.0
+    cookie: ^0.4.1
+    https-proxy-agent: ^5.0.0
+    lru_map: ^0.3.3
+    tslib: ^2.4.1 || ^1.9.3
+  checksum: 3ec42ea5d95a204c5ad8ed360c4d2d6c1583780b4879e752856a418289889b8a9e18e6d1ebe721a141b2b0fd3275e22c7ca3661fb6db471e343067c2caf29218
+  languageName: node
+  linkType: hard
+
+"@sentry/types@npm:7.60.0":
+  version: 7.60.0
+  resolution: "@sentry/types@npm:7.60.0"
+  checksum: c145704ef188121df0f19e195026b6be22840f56c92e914b54063a2c2241ab09e7c3863530efd70bbb6d1152237b3b99f22a3d9cded06ac25e089121c2890dd7
+  languageName: node
+  linkType: hard
+
+"@sentry/utils@npm:7.60.0":
+  version: 7.60.0
+  resolution: "@sentry/utils@npm:7.60.0"
+  dependencies:
+    "@sentry/types": 7.60.0
+    tslib: ^2.4.1 || ^1.9.3
+  checksum: 3dd3dd2d7c33e011db700032d1a81f8c7c95f6b212f9685fd614e976fae1ff259dd98340e5ccca52bf251387e7f02949850edb5879a35da842e1b71a1e975331
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -191,6 +247,15 @@ __metadata:
   version: 1.3.2
   resolution: "@types/mime@npm:1.3.2"
   checksum: 0493368244cced1a69cb791b485a260a422e6fcc857782e1178d1e6f219f1b161793e9f87f5fae1b219af0f50bee24fcbe733a18b4be8fdd07a38a8fb91146fd
+  languageName: node
+  linkType: hard
+
+"@types/mongoose@npm:^5.11.97":
+  version: 5.11.97
+  resolution: "@types/mongoose@npm:5.11.97"
+  dependencies:
+    mongoose: "*"
+  checksum: 54c896814a92898535eb8965f90308f2661b75f4a53e28405802fbe9f90ba7d37140f151b1e291e08555a1700d3486911104c108ed02a94c6feddeab6bd3bfea
   languageName: node
   linkType: hard
 
@@ -644,6 +709,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cookie@npm:^0.4.1":
+  version: 0.4.2
+  resolution: "cookie@npm:0.4.2"
+  checksum: a00833c998bedf8e787b4c342defe5fa419abd96b32f4464f718b91022586b8f1bafbddd499288e75c037642493c83083da426c6a9080d309e3bd90fd11baa9b
+  languageName: node
+  linkType: hard
+
 "cors@npm:^2.8.5":
   version: 2.8.5
   resolution: "cors@npm:2.8.5"
@@ -706,10 +778,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "defendify@workspace:."
   dependencies:
+    "@sentry/node": ^7.60.0
     "@types/compression": ^1.7.2
     "@types/cors": ^2.8.13
     "@types/express": ^4.17.17
     "@types/helmet": ^4.0.0
+    "@types/mongoose": ^5.11.97
     "@types/morgan": ^1.9.4
     "@types/node": ^20.4.4
     compression: ^1.7.4
@@ -1311,6 +1385,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lru_map@npm:^0.3.3":
+  version: 0.3.3
+  resolution: "lru_map@npm:0.3.3"
+  checksum: ca9dd43c65ed7a4f117c548028101c5b6855e10923ea9d1f635af53ad20c5868ff428c364d454a7b57fe391b89c704982275410c3c5099cca5aeee00d76e169a
+  languageName: node
+  linkType: hard
+
 "make-error@npm:^1.1.1":
   version: 1.3.6
   resolution: "make-error@npm:1.3.6"
@@ -1547,7 +1628,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongoose@npm:^7.4.0":
+"mongoose@npm:*, mongoose@npm:^7.4.0":
   version: 7.4.0
   resolution: "mongoose@npm:7.4.0"
   dependencies:
@@ -2244,6 +2325,13 @@ __metadata:
     ts-node-transpile-only: dist/bin-transpile.js
     ts-script: dist/bin-script-deprecated.js
   checksum: 090adff1302ab20bd3486e6b4799e90f97726ed39e02b39e566f8ab674fd5bd5f727f43615debbfc580d33c6d9d1c6b1b3ce7d8e3cca3e20530a145ffa232c35
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.4.1 || ^1.9.3":
+  version: 2.6.0
+  resolution: "tslib@npm:2.6.0"
+  checksum: c01066038f950016a18106ddeca4649b4d76caa76ec5a31e2a26e10586a59fceb4ee45e96719bf6c715648e7c14085a81fee5c62f7e9ebee68e77a5396e5538f
   languageName: node
   linkType: hard
 
