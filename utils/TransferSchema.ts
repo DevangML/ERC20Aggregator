@@ -27,4 +27,4 @@ const transferSchema: Schema = new Schema(
 
 let Transfers = mongoose.model<ITransfer>("Transfer", transferSchema);
 
-module.exports = { Transfers };
+export default Transfers;

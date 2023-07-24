@@ -4,19 +4,29 @@
     "module": "CommonJS",
     "checkJs": true,
     "allowJs": true,
-    "outDir": "./dist",
-    "rootDir": "src",
+    "outDir": "build", // Types should go into this directory.
+    "declaration": true, // Generate d.ts files
+    "rootDir": ".",
     "strict": true,
     "noImplicitAny": false,
+    "sourceMap": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
+    "types": ["node"],
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
+    "typeRoots": ["node_modules/@types"],
     "paths": {
-      "@/*": ["src/*"]
-    },
-    "typeRoots": ["node_modules/@types"]
-  }
+      "*": ["node_modules/*", "types/*"],
+      "express": ["node_modules/express/lib/express"],
+      "mongoose": ["node_modules/mongoose/lib/index"],
+      "helmet": ["node_modules/helmet/dist/helmet"],
+      "@sentry/node": ["node_modules/@sentry/node/dist/index"],
+      "morgan": ["node_modules/morgan/index"],
+      "cors": ["node_modules/cors/lib/index"]
+    }
+  },
+  "exclude": ["node_modules", "./build/**/*"]
 }

@@ -18,4 +18,4 @@ const connectToDB = async () => {
   }
 };
 
-module.exports = { connectToDB };
+export default connectToDB;

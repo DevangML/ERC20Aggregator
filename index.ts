@@ -1,12 +1,11 @@
-const express = require("express");
-import { Application, Request, Response, NextFunction } from "express";
-const helmet = require("helmet");
-const cors = require("cors");
-const compression = require("compression");
-const morgan = require("morgan");
-const Transfer = require("./utils/TransferSchema").Transfers;
-const connectToDB = require("./utils/db").connectToDB;
-const Sentry = require("@sentry/node");
+import express, { Application, Request, Response, NextFunction } from "express";
+import helmet from "helmet";
+import cors from "cors";
+import compression from "compression";
+import morgan from "morgan";
+import Transfers from "./utils/TransferSchema";
+import connectToDB from "./utils/connectToDb";
+import * as Sentry from "@sentry/node";
 
 const app: Application = express();
 
@@ -67,7 +66,7 @@ app.post("/webhook", async (req: Request, res: Response) => {
   });
 
   if (newTransfers.length > 0) {
-    await Transfer.insertMany(newTransfers);
+    await Transfers.insertMany(newTransfers);
     console.log(`Added new to transfers to db`);
   }
 
@@ -77,12 +76,7 @@ app.post("/webhook", async (req: Request, res: Response) => {
 app.use(Sentry.Handlers.errorHandler());
 
 // Optional fallthrough error handler
-app.use(function onError(
-  err: any,
-  req: any,
-  res: { statusCode: number; end: (arg0: string) => void; sentry: string },
-  next: any
-) {
+app.use(function onError(err: any, req: any, res: any) {
   // The error id is attached to `res.sentry` to be returned
   // and optionally displayed to the user for support.
   res.statusCode = 500;
@@ -90,15 +84,15 @@ app.use(function onError(
 });
 
 // Error handling middleware
-app.use((err: Error, req: Request, res: Response, next: NextFunction): void => {
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack);
   res.status(500).send("Internal server error");
 });
 
-const port: number = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+const port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
 connectToDB().then(() => {
-  app.listen(port, (): void => {
+  app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
   });
 });
