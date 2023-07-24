@@ -89,12 +89,12 @@ app.post("/webhook", (req, res) => __awaiter(void 0, void 0, void 0, function* (
 }));
 app.use(Sentry.Handlers.errorHandler());
 // Optional fallthrough error handler
-app.use(function onError(err, req, res) {
-    // The error id is attached to `res.sentry` to be returned
-    // and optionally displayed to the user for support.
-    res.statusCode = 500;
-    res.end(res.sentry + "\n");
-});
+// app.use(function onError(err: any, req: any, res: any) {
+//   // The error id is attached to `res.sentry` to be returned
+//   // and optionally displayed to the user for support.
+//   res.statusCode = 500;
+//   res.end(res.sentry + "\n");
+// });
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
