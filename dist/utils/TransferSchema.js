@@ -40,3 +40,4 @@ const transferSchema = new mongoose_1.Schema({
 }, { timestamps: true });
 let Transfers = mongoose_1.default.model("Transfer", transferSchema);
 exports.default = Transfers;
+//# sourceMappingURL=TransferSchema.js.map

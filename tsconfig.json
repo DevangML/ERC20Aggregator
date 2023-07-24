@@ -1,32 +1,50 @@
+// {
+//   "compilerOptions": {
+//     "target": "ES2016",
+//     "module": "CommonJS",
+//     "checkJs": false,
+//     "allowJs": false,
+//     "outDir": "dist",
+//     "declaration": true,
+//     "rootDir": ".",
+//     "strict": true,
+//     "noImplicitAny": false,
+//     "sourceMap": false,
+//     "esModuleInterop": true,
+//     "allowSyntheticDefaultImports": true,
+//     "moduleResolution": "node",
+//     "types": ["node"],
+//     "skipLibCheck": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "baseUrl": ".",
+//     "typeRoots": ["node_modules/@types"],
+//     "paths": {
+//       "*": ["node_modules/*", "types/*"],
+//       "express": ["node_modules/express/lib/express"],
+//       "mongoose": ["node_modules/mongoose/lib/index"],
+//       "helmet": ["node_modules/helmet/dist/helmet"],
+//       "@sentry/node": ["node_modules/@sentry/node/dist/index"],
+//       "morgan": ["node_modules/morgan/index"],
+//       "cors": ["node_modules/cors/lib/index"]
+//     }
+//   },
+//   "exclude": ["node_modules", "dist", "build"]
+// }
+
 {
   "compilerOptions": {
-    "target": "ES2016",
-    "module": "CommonJS",
-    "checkJs": false,
-    "allowJs": false,
-    "outDir": "dist",
-    "declaration": true,
-    "rootDir": ".",
-    "strict": true,
-    "noImplicitAny": false,
-    "sourceMap": false,
+    "module": "commonjs",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "noImplicitAny": true,
     "moduleResolution": "node",
-    "types": ["node"],
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "outDir": "dist",
     "baseUrl": ".",
-    "typeRoots": ["node_modules/@types"],
     "paths": {
-      "*": ["node_modules/*", "types/*"],
-      "express": ["node_modules/express/lib/express"],
-      "mongoose": ["node_modules/mongoose/lib/index"],
-      "helmet": ["node_modules/helmet/dist/helmet"],
-      "@sentry/node": ["node_modules/@sentry/node/dist/index"],
-      "morgan": ["node_modules/morgan/index"],
-      "cors": ["node_modules/cors/lib/index"]
+      "*": ["node_modules/*", "src/types/*"]
     }
   },
-  "exclude": ["node_modules", "dist", "build"]
+  "include": ["./**/*"]
 }
