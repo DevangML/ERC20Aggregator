@@ -69,6 +69,9 @@ app.use(Sentry.Handlers.requestHandler());
 app.use(Sentry.Handlers.tracingHandler());
 app.post("/webhook", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
+    if (!body) {
+        return res.status(400).json({ error: "No body provided" });
+    }
     if (body.confirmed) {
         return res.status(200).json();
     }

@@ -50,6 +50,10 @@ interface WebhookBody {
 app.post("/webhook", async (req: Request, res: Response) => {
   const { body } = req as { body: WebhookBody };
 
+  if (!body) {
+    return res.status(400).json({ error: "No body provided" });
+  }
+
   if (body.confirmed) {
     return res.status(200).json();
   }
