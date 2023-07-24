@@ -2,10 +2,10 @@
   "compilerOptions": {
     "target": "ES2016",
     "module": "CommonJS",
-    "checkJs": true,
-    "allowJs": true,
-    "outDir": "build", // Types should go into this directory.
-    "declaration": true, // Generate d.ts files
+    "checkJs": false,
+    "allowJs": false,
+    "outDir": "dist",
+    "declaration": true,
     "rootDir": ".",
     "strict": true,
     "noImplicitAny": false,
@@ -28,5 +28,5 @@
       "cors": ["node_modules/cors/lib/index"]
     }
   },
-  "exclude": ["node_modules", "./build/**/*"]
+  "exclude": ["node_modules", "dist", "build"]
 }
