@@ -41,5 +41,8 @@
   "pre-commit": [
     "build",
     "add-build"
-  ]
+  ],
+  "engines": {
+  "node": ">=18 <20"
+  }
 }
